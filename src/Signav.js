@@ -1,10 +1,11 @@
-import './Navbar.css'
+import './Signav.css'
 import User from './user.png'
 import Login from "./Login";
 import Register from "./Register";
 import Te from './Te';
-function Navbar(){
-  
+import {useLocation,useNavigate} from "react-router-dom";
+function Signav(){
+  const location=useLocation()
     return(
  
         <div className="menu-bar">
@@ -35,14 +36,14 @@ function Navbar(){
     </li>*/}
         <li><a href="#">Blog</a>
         </li>
-        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Connect</a></li>
         <li>
         <div className="dropdown">
         <img src={User} className="use" />  
   <button className="s"></button>
   <div className="dropdown-content">
-    <a id='dr' href="./Login">Login</a>
-    <a href="./Register">Register</a>
+    <a id='dr' href="" >{location.state.id}</a>
+    
     
   </div>
 </div>
@@ -55,4 +56,4 @@ function Navbar(){
     }
 
     
-export default Navbar;
+export default Signav;
